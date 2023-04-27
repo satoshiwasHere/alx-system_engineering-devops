@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#A script displaying "bad luck" in 4, "good luck" in 8, and "Best School" alternatively
+
+curr=1
+while ((curr <= 10)); do
+	if ((curr == 4)); then
+		echo "bad luck"
+	elif ((curr == 8)); then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((curr+=1))
+done
+
