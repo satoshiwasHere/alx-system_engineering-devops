@@ -3,8 +3,8 @@
 
 i=0
 
-until ((i > 9));
-do
+until ((i > 9));do
+
 	echo "Best School"
 	((i+=1))
 done
