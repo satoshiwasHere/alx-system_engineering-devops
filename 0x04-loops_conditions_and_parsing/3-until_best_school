@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #A script displaying "Best School" 10 times using until loop only
 
-i=0
+curr=1
 
-until ((i > 9));do
-
-	echo "Best School"
-	((i+=1))
+until [ $curr -gt 10 ]
+do
+   echo "Best School"
+   curr=$(( curr+1 ))
 done
