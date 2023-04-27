@@ -1,7 +1,5 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #A script displaying "Best school" 10 times using for
-
-#!/bin/bash
 
 for i in {1..10};
 do
