@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#A script displaying the content of the current directory in list format
+#only displays the part of the name after the first dash
+
+for file in *
+do
+    #check if file is not hidden
+    if [[ "$file" != .* ]] 
+    then
+        #split the filename by the dash
+        IFS='-' read -r prefix _ rest <<< "$file"
+        #print the part after the dash
+        echo "$rest"
+    fi
+done
