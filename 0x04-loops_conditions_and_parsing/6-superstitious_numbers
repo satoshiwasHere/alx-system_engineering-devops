@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#A script that prints bad luck for different regions
+curr=1
+
+while [ $curr -le 20 ]
+do
+  echo "$curr"
+  case $curr in
+    "4") echo "bad luck from China";;
+    "9") echo "bad luck from Japan";;
+    "17") echo "bad luck from Italy";;
+  esac
+  (( curr++ ))
+done
