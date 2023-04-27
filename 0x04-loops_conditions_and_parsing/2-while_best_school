@@ -5,7 +5,9 @@ v=1
 
 while [ $v -le 10 ]
 do
+
     echo "Best School"
     ((v++))
+
 done
 
