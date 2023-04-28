@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-#Bash script that creats a file and its PID,
-#displays a couple of statements,
-#then terminates
+#creates file containing its PID,
+#Displays statement while receiving signal
+#Displays To infinity and beyond indefinitely
+#terminates
 
 echo $$ >> /var/run/myscript.pid
 
 trap "echo 'I hate the kill command'; rm -rf /var/run/myscript.pid; exit" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm -rf /var/run/myscript.pid; exit" SIGQUIT
+trap "rm -rf /var/run/holbertonscript.pid; exit" SIGQUIT
 
 for (( ; ; ))
 do 
