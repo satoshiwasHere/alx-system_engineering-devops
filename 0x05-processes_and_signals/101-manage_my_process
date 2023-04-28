@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Bash script that creats a file and its PID,
+#displays a couple of statements,
+#then terminates
+
+echo $$ >> /var/run/myscript.pid
+
+trap "echo 'I hate the kill command'; rm -rf /var/run/myscript.pid; exit" SIGTERM
+trap "echo 'Y U no love me?!'" SIGINT
+trap "rm -rf /var/run/myscript.pid; exit" SIGQUIT
+
+for (( ; ; ))
+do 
+    echo 'To infinity and beyond' 
+    sleep 2
+done
