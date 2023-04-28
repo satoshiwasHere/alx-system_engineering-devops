@@ -1,4 +1,4 @@
-#!/usrbin/env bash
+#!/usr/bin/env bash
 # A script displaying the visitor IP along with
 #the HTTP status code from the Apache log file
 
