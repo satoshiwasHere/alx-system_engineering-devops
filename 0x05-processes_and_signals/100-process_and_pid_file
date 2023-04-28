@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-#creates file containing its PID,
-#Displays statement while receiving signal
-#Displays To infinity and beyond indefinitely
-#terminates
+# Bash (init) script 101-manage_my_process that manages manage_my_process
 
 echo $$ >> /var/run/myscript.pid
 
