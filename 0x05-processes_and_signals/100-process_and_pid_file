@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Bash (init) script 101-manage_my_process that manages manage_my_process
+# creates file containing PID
+# captures signal displaying custom statment
+# terminates
 
 echo $$ >> /var/run/myscript.pid
 
