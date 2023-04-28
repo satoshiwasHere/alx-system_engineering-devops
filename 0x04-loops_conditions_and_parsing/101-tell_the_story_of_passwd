@@ -1,15 +1,18 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 # A script telling a story based on the contents of the file `/etc/passwd` 
 
 while IFS= read -r line
 do
-  
-  IFS=':' read -r -a array <<< "$line"
-  USERNAME=${array[0]}
-  GROUP_ID=${array[3]}
-  HOME_DIRECTORY=${array[5]}
-  COMMAND=${array[6]}
-  PASSWORD=${array[1]}
-  USER_ID_INFO=${array[4]}
-  echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND. USER ID's place is protected by the passcode $PASSWORD, more info about the user here: $USER_ID_INFO"
-done < /etc/passwd
+  # IFS splits the line into an array, each element containing the information of one field
+  IFS=':' read -r -a passwd_info <<< "$line"
+  USERNAME=${passwd_info[0]}
+  GROUP_ID=${passwd_info[3]}
+  HOME_DIRECTORY=${passwd_info[5]}
+  COMMAND=${passwd_info[6]}
+  PASSWORD=${passwd_info[1]}
+  USER_ID_INFO=${passwd_info[4]}
+  echo "The user $USERNAME is part of the $GROUP_ID gang, lives in 
+  $HOME_DIRECTORY and rides $COMMAND. USER ID's place is protected by 
+  the passcode $PASSWORD, more info about the user here: 
+  $USER_ID_INFO"
+  done < /etc/passwd
