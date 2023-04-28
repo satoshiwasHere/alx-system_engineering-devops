@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # kills the process in "task4"
 
-PID=$(pgrep -f './script.sh')
-
-kill $PID
+pgrep -f 4-to_infinity_and_beyond | xargs kill
