@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script for process managment
+
+for ((x=0; ;x++))
+do
+      echo 'I am alive!' >> /tmp/my_process
+      sleep 2
+done

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Bash (init) script '101-manage_my_process',
+# that manages 'manage_my_process'
+
+if [ "xr" = "start" ]
+then
+    ./manage_my_process & > /var/run/my_process.pid
+    printf 'manage_my_process started'
+elif [ "xr" = "restart" ]
+then
+    id=$(cat /var/run/my_process.pid)
+    kill -s SIGSTOP "$id"
+    rm /var/run/my_process.pid
+    ./manage_my_process & > /var/run/my_process.pid
+    printf 'manage_my_process restarted'
+elif [ "xr" = "stop" ]
+then
+    id=$(cat /var/run/my_process.pid)
+    kill -s SIGSTOP "$id"
+    rm /var/run/my_process.pid
+    printf 'manage_my_process stopped'
+else
+    printf 'Usage: manage_my_process {start|stop|restart}'
+fi
