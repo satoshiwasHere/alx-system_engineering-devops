@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# kills the process in "task4"
+
+PID=$(pgrep -f './script.sh')
+
+kill $PID
