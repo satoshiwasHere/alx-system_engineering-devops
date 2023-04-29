@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Bash script to "manage my process"
+
+case $1 in
+    "start")
+	./manage_my_process & > /var/run/my_process.pid
+	printf 'manage_my_process started\n';;
+    "restart")
+	pid=$(cat /var/run/my_process.pid)
+	kill -s SIGSTOP "$pid"
+	rm /var/run/my_process.pid
+	./manage_my_process & > /var/run/my_process.pid
+	printf 'manage_my_process restarted\n';;
+    "stop")
+	pid=$(cat /var/run/my_process.pid)
+	kill -s SIGSTOP "$pid"
+	rm /var/run/my_process.pid
+	printf 'manage_my_process stopped\n';;
+    *)
+	printf 'Usage: manage_my_process {start|stop|restart}\n';;
+esac
