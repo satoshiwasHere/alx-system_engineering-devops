@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Script pings 5 times a ip address passed
+#as an argument
+
+[ $# -eq 0 ] && { echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"; exit 1; }
+for i in {1..5}; do
+    ping -c 1 $1
+done
