@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script that displays listening sockets, PID,
+#and name of program
+netstat-nao
