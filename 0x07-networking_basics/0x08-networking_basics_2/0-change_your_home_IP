@@ -3,8 +3,7 @@
 #localhost resolves to 127.0.0.2
 #facebook.com resolves to 8.8.8.8.
 
-IP_ADDR="127.0.0.2"
-NEW_IP
-sed -e s/127.0.0.1/$IP_ADDR/ /etc/hosts > ~/hosts.new
-echo '8.8.8.8	facebook.com' >> ~/hosts.new
-cat ~/hosts.new > /etc/hosts
+cp /etc/hosts /tmp/hosts.new
+echo "127.0.0.2		localhost" > /tmp/hosts.new
+echo "8.8.8.8		facebook.com" >> /tmp/hosts.new
+cp -f /tmp/hosts.new /etc/hosts
