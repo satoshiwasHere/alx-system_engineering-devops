@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-# RE that matches a particular pattern
+# RE matches a particular pattern
 puts ARGV[0].scan(/hbt+n/).join
