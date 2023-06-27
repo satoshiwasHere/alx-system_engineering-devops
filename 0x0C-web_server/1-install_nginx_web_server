@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # Installs and setsup nginx on to the server
-
 # installs nginx and updates the package list
+# Makes a custom html index file as below
 apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 
-# Makes a custom html index file as below
 echo "Hello World!" > /var/www/html/index.html
 service nginx start
