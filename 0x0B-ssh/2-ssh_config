@@ -1,0 +1,10 @@
+# Passwordless server configuration options
+
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+
+    GSSAPIDelegateCredentials true
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
