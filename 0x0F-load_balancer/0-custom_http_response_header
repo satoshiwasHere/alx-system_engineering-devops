@@ -16,21 +16,10 @@ echo 'Hello World!' |sudo tee  /var/www/html/index.html
 
 echo "Ceci n'est pas une page" |sudo tee /var/www/html/custom_404.html
 
-SERVER=$(hostname)
+string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
-SERVER_CONFIG=\
-"server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-        location / {
-		add_header X-Served-By '$SERVER';
-                try_files \$uri \$uri/ =404;
-        }
-}"
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
-bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
-
-sudo /etc/init.d/nginx restart
+sudo service nginx restart
