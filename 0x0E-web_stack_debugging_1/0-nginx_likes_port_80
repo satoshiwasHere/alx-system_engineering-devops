@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Script automates "nginx port 80 listening error" fix
+cp -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service apache2 start
