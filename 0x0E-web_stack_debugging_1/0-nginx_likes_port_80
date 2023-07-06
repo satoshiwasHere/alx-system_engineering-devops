@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-service apache2 start
+# Script automates "nginx port 80 listening error" fix
+sudo service apache2 start
