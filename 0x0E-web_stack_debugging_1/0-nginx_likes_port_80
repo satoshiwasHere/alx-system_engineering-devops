@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-# Script automating Nginx port 88 litening error fix.
 sudo service apache2 start
