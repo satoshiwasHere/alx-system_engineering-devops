@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# shorten prevous script
+cp -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+echo '9791' | sudo tee /run/nginx.pid
