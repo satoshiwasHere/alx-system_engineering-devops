@@ -8,9 +8,9 @@ after = None
 
 
 def recurse(subreddit, hot_list=[]):
-    """
-	returning hot top ten post titles recursively
-    """
+"""
+returning hot top ten post titles recursively
+"""
     global after
     user_agent = {'User-Agent': 'api_advanced-project'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
